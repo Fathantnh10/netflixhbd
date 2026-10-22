@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<link rel="icon" href="https://favicon.im/domain/netflix.com">
+<link rel="shortcut icon" href="https://favicon.im/domain/netflix.com">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Netflix - Sign In</title>
+
+<!-- Favicon -->
+
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.cdnfonts.com/css/netflix-sans" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="login-page">
+
+<header class="login-top">
+  <img src="images/logo.png" alt="Netflix Logo">
+</header>
+
+<main class="login-main">
+  <div class="login-box">
+
+    <h1>Enter your info to sign in</h1>
+    <p class="login-sub">Or get started with a new account.</p>
+
+    <form id="loginForm" novalidate>
+
+      <div class="nf-input">
+        <input type="email" id="email" autocapitalize="off" autocomplete="username" placeholder=" " required>
+        <label for="email">Email or mobile number</label>
+      </div>
+
+      <div class="nf-input" id="passwordWrap" hidden>
+        <input type="password" id="password" autocomplete="current-password" placeholder=" " required>
+        <label for="password">Password</label>
+      </div>
+
+      <button type="submit" id="loginBtn" class="login-btn">Continue</button>
+
+      <div id="loginError"></div>
+
+      <div class="get-help-wrap">
+        <button type="button" class="get-help" id="getHelpToggle" aria-expanded="false" aria-controls="getHelpMenu">
+          Get Help
+          <svg class="chev" width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3.5 6l4.5 4.5L12.5 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="get-help-menu" id="getHelpMenu" hidden>
+          <a href="#forgot-email" data-help-action="forgot">Forgot email or mobile number?</a>
+          <a href="#sign-in-help" data-help-action="learn">Learn more about sign-in</a>
+        </div>
+      </div>
+
+      <p class="recaptcha-text">This page is protected by Google reCAPTCHA to ensure you're not a bot.</p>
+
+    </form>
+  </div>
+</main>
+
+<footer class="login-footer">
+  <p class="footer-q">Questions? Call 007-803-321-8275 (Toll-Free)</p>
+  <ul class="footer-links">
+    <li><a href="#">FAQ</a></li>
+    <li><a href="#">Help Center</a></li>
+    <li><a href="#">Terms of Use</a></li>
+    <li><a href="#">Privacy</a></li>
+    <li><a href="#">Cookie Preferences</a></li>
+    <li><a href="#">Corporate Information</a></li>
+  </ul>
+  <div class="lang-box">
+    <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M1.5 3h7M5 1.5V3M2.5 3c.5 2.5 2.200 4.300 4.500 5M7.500 3c-.5 2.500-2.500 4.500-5.500 5.500M8 14.500l3-8 3 8M9 12h4" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>English</span>
+    <svg class="caret" width="8" height="5" viewBox="0 0 8 5" aria-hidden="true"><path d="M0 0h8L4 5z" fill="currentColor"/></svg>
+  </div>
+</footer>
+
+<audio id="netflixSound" src="tadum.mp3"></audio>
+<script src="script.js"></script>
+
+</body>
+</html>

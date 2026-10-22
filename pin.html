@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="https://favicon.im/domain/netflix.com">
+<link rel="shortcut icon" href="https://favicon.im/domain/netflix.com">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Netflix PIN</title>
+<link rel="stylesheet" href="pin.css">
+<link href="https://fonts.cdnfonts.com/css/netflix-sans" rel="stylesheet">
+</head>
+<body>
+
+<div class="pin-bg"></div>
+<div class="overlay"></div>
+<div class="vignette"></div>
+
+<div class="netflix-close">✕</div>
+
+<div class="pin-container">
+  <div class="pin-wrapper">
+    <p class="subtitle">Profile Lock is enabled.</p>
+    <h1 class="title">Enter your PIN to access this profile.</h1>
+
+    <div class="pin-box">
+      <input type="password" maxlength="1" class="pin" inputmode="numeric" autocomplete="off">
+      <input type="password" maxlength="1" class="pin" inputmode="numeric" autocomplete="off">
+      <input type="password" maxlength="1" class="pin" inputmode="numeric" autocomplete="off">
+      <input type="password" maxlength="1" class="pin" inputmode="numeric" autocomplete="off">
+    </div>
+
+    <a class="forgot-pin">Forgot PIN?</a>
+    <p id="pinError">Incorrect PIN</p>
+    <div id="loader" class="loader"></div>
+  </div>
+</div>
+
+<audio id="tadum" src="tadum.mp3"></audio>
+<script src="pin.js"></script>
+</body>
+</html>

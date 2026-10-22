@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="https://favicon.im/domain/netflix.com">
+<link rel="shortcut icon" href="https://favicon.im/domain/netflix.com">
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Favicon -->
+
+
+<title>Netflix - Choose Profile</title>
+<link rel="stylesheet" href="profiles.css">
+</head>
+
+<body>
+
+<a class="profiles-logo" href="loginPage.html" aria-label="Netflix"><img src="images/logo.png" alt="NETFLIX"></a>
+<div class="profiles-container">
+  <h1>Who’s Watching?</h1>
+
+  <div class="profiles-grid">
+
+    <div class="profile" data-profile="recipient">
+      <img src="images/recipient-profile.png" class="avatar-img" alt="[RECIPIENT_NAME] profile avatar">
+      <p>[RECIPIENT_NAME]</p>
+      <div class="lock-icon">🔒</div>
+    </div>
+
+    <div class="profile" data-profile="sender">
+      <img src="images/sender-profile.png" class="avatar-img" alt="[SENDER_NAME] profile avatar">
+      <p>[SENDER_NAME]</p>
+      <div class="lock-icon">🔒</div>
+    </div>
+
+  </div>
+
+  <!-- Keep Manage Profiles outside the profiles grid. -->
+  <button type="button" class="manage-btn" aria-pressed="false">
+    <svg class="manage-pencil" viewBox="0 0 24 24" aria-hidden="true"><path d="m16.86 4.49 2.65 2.65M4 20l4.2-.85L19.2 8.15a1.9 1.9 0 0 0-2.7-2.7L5.5 16.5 4 20Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <span>Manage Profiles</span>
+  </button>
+
+</div>
+
+<script src="profiles.js"></script>
+</body>
+</html>
