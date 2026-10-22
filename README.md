@@ -111,15 +111,6 @@ In `index.html`, edit `[GALLERY_TITLE_1]` and `[GALLERY_TITLE_2]`, then replace 
 
 Make small, targeted changes and test the affected pages before publishing.
 
-## Deploy to Vercel
-
-1. Push the project to a GitHub repository.
-2. Import the repository into Vercel.
-3. Keep it as a static site; a build command is generally not required for plain HTML/CSS/JavaScript.
-4. Deploy and test the sign-in, profile, PIN, main page, videos, galleries, hover cards, and modal on desktop and mobile.
-
-Keep `vercel.json` if you rely on its root redirect, or update it intentionally when changing navigation.
-
 ## Credits and Usage
 
 This project recreates interaction and layout ideas for learning and personal customization. It does not include Netflix's proprietary service or catalog. Use your own images, videos, text, and other assets, and check the applicable rights before distributing or using the project commercially.
