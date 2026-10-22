@@ -34,7 +34,6 @@ A customizable birthday-surprise website inspired by Netflix's browsing experien
 ├── images/             # Add your images and artwork here
 ├── video/              # Add your video files here
 ├── tadum.mp3           # Optional sound effect
-└── vercel.json          # Vercel routing configuration
 ```
 
 The repository intentionally does not include personal photos, videos, or message artwork. Add your own assets before deploying. Keep each filename and letter case consistent with the paths used in the HTML.
