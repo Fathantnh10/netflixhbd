@@ -869,7 +869,7 @@ body.home-page .netflix-carousel .card {
     transform: none !important;
     transition: none;
 }
-/* Gallery source images are replaceable placeholders; display cards at portrait 3:4 without modifying source files. */
+/* LOCK: keep all 36 personal images portrait 3:4; do not resize source files. */
 body.home-page .netflix-carousel .card > img.card-img-top {
     display: block;
     width: 100%;

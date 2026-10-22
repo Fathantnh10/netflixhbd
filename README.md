@@ -1,162 +1,116 @@
-<div align="center">
+# Netflix-Inspired Birthday Website Template
 
-# 🎬 BirthdayFlix
+A customizable birthday-surprise website inspired by Netflix's browsing experience. Add your own photos, video, profile names, and birthday message to create a personalized gift.
 
-### A customizable, Netflix-inspired birthday website template
+> This is an independent fan-made template. It is not affiliated with, endorsed by, or sponsored by Netflix. Netflix names, logos, and related marks belong to their respective owners.
 
-Create a personal birthday experience with a cinematic hero, three photo carousels, hover previews, profile selection, a demo PIN screen, and a heartfelt message.
+## Features
 
-[![HTML](https://img.shields.io/badge/HTML5-markup-E34F26?logo=html5&logoColor=white)](https://developer.mozilla.org/docs/Web/HTML)
-[![CSS](https://img.shields.io/badge/CSS3-styling-1572B6?logo=css3&logoColor=white)](https://developer.mozilla.org/docs/Web/CSS)
-[![JavaScript](https://img.shields.io/badge/JavaScript-vanilla-F7DF1E?logo=javascript&logoColor=222)](https://developer.mozilla.org/docs/Web/JavaScript)
-[![No build step](https://img.shields.io/badge/build-no%20step-success)](#run-locally)
-[![Responsive](https://img.shields.io/badge/layout-responsive-blueviolet)](#features)
+- Netflix-inspired dark interface and navigation
+- Hero section with a background video, title, description, and action buttons
+- Horizontal photo carousels with manual navigation
+- Hover preview cards for gallery items
+- Two customizable profiles and a demo PIN flow
+- “More Info” modal for a birthday letter, image, or other message
+- Responsive layout for desktop and mobile screens
+- Plain HTML, CSS, and JavaScript; no build step required
 
-**Bring your own photos, video, names, and message.** No framework or build tool required.
-
-</div>
-
-![BirthdayFlix social preview](docs/social-preview.png)
-
-### Default website preview
-
-This preview uses generic placeholder media. Replace the assets to personalize it.
-
-![Default BirthdayFlix page with placeholder media](docs/demo-preview.png)
-
-> **Independent fan-made template.** This project is not affiliated with, endorsed by, or sponsored by Netflix, Inc. Netflix names, logos, UI elements, and other marks belong to their respective owners. Replace brand-specific assets and links as appropriate before public or commercial use.
-
-## ✨ Features
-
-- 🎞️ Cinematic hero section with background video, overlay, and Play / More Info actions
-- 🖼️ **Three independent manual carousels** with 21 replaceable portrait placeholders each (63 image slots total)
-- 🪄 Netflix-inspired hover preview cards that sit above the carousel without changing thumbnail size
-- 👤 Two demo profiles, a profile switcher, and a front-end PIN flow
-- 💌 More Info modal for a personal birthday message and image
-- 📱 Responsive desktop and mobile layout
-- ♿ Keyboard-friendly controls and accessible labels where practical
-- ⚙️ One central `customization.js` file for names, text, demo accounts, gallery titles, and PIN
-- 🧰 Plain HTML, CSS, and JavaScript — no build step or package installation
-
-## 🚀 Quick start
-
-1. Download or clone this repository.
-2. Open `customization.js` and change the names, titles, message, demo accounts, and demo PIN.
-3. Replace the files in `images/` and `video/video.mp4` with your own media, keeping the filenames the same.
-4. Start a local web server from the project root:
-
-   ```bash
-   python -m http.server 8000
-   ```
-
-5. Open [http://localhost:8000/loginPage.html](http://localhost:8000/loginPage.html).
-
-A local server is recommended because browser storage, media playback, and relative asset paths can behave differently when opening files directly with `file://`.
-
-## 🛠️ Customize it
-
-Start with [`customization.js`](customization.js). This file controls:
-
-| Setting | What it changes |
-|---|---|
-| `recipientName` | Birthday recipient's name across the pages |
-| `senderName` | Sender name and message sign-off |
-| `creatorName` / `year` | Footer credit |
-| `messageTitle` | Heading in the More Info modal |
-| `galleryTitles` | Names of all three carousel rows |
-| `customTagline` | Short description shown in hover previews |
-| `heroDescription` | Text beside the featured hero video |
-| `birthdayMessage` / `closingMessage` | Personal message and closing line |
-| `demoAccounts` | Sample email/password pairs for the demo sign-in |
-| `demoPin` | Four-digit demo PIN |
-
-Detailed instructions: [`docs/CUSTOMIZATION.md`](docs/CUSTOMIZATION.md).
-
-### Replaceable media
-
-| File or pattern | Purpose |
-|---|---|
-| `images/logo.png` | Small header / profile-page wordmark |
-| `images/recipient-profile.png` | Recipient profile avatar |
-| `images/sender-profile.png` | Sender profile avatar |
-| `images/hero-title.png` | Title artwork over the hero video |
-| `images/featured-cover.jpg` | Hero poster and More Info cover |
-| `images/message-artwork.png` | Image at the end of the birthday message |
-| `images/1.jpg` – `images/63.jpg` | Three galleries, 21 images per row |
-| `video/video.mp4` | Hero background and playable video |
-| `audio/celebration-chime.mp3` | Original generic confirmation chime |
-
-The included images and video are **generic placeholders**, not personal media. You can overwrite them with your own files using the same names. Gallery cards keep a 3:4 portrait display ratio with `object-fit: cover`; source images do not need to be cropped to that ratio first.
-
-## 🔐 Demo sign-in and security
-
-Default demo credentials are listed in `customization.js`:
-
-| Profile | Email | Password |
-|---|---|---|
-| Recipient | `recipient@example.com` | `demo1234` |
-| Sender | `sender@example.com` | `demo5678` |
-
-The default demo PIN is `1234`.
-
-**This is a front-end demo, not real authentication.** Credentials and the PIN live in client-side JavaScript and can be inspected or bypassed. Do not use real passwords, private information, or this flow to protect confidential photos. Treat the website as public once it is published, and only upload media you have permission to share.
-
-## 📁 Project structure
+## Project Structure
 
 ```text
 .
-├── index.html
-├── loginPage.html
-├── profiles.html
-├── pin.html
-├── customization.js       # Edit names, copy, demo accounts, and PIN here
-├── script.js
-├── profiles.js
-├── pin.js
-├── landing.css
-├── responsive.css
-├── style.css
-├── profiles.css
-├── pin.css
-├── favicon.ico
-├── images/                # Replace the generic placeholders
-├── video/video.mp4        # Replace with your own clip
-├── audio/                 # Generic chime
-├── docs/                  # Customization, research, publishing guide, preview
-└── .github/               # Issue and pull-request templates
+├── index.html          # Main page, hero, carousels, preview cards, and modal
+├── loginPage.html      # Sign-in screen
+├── profiles.html       # Profile selection screen
+├── pin.html            # PIN screen
+├── landing.css         # Main-page, carousel, preview, and modal styles
+├── responsive.css      # Responsive styles
+├── style.css           # Shared and sign-in styles
+├── profiles.css        # Profile selection styles
+├── pin.css             # PIN screen styles
+├── script.js           # Login and main-page interactions
+├── profiles.js         # Profile selection interactions
+├── pin.js              # PIN interactions
+├── images/             # Add your images and artwork here
+├── video/              # Add your video files here
+├── tadum.mp3           # Optional sound effect
 ```
 
-## 🧪 Test checklist
+The repository intentionally does not include personal photos, videos, or message artwork. Add your own assets before deploying. Keep each filename and letter case consistent with the paths used in the HTML.
 
-Before sharing your personalized version, check:
+## Run Locally
 
-- [ ] The login demo accepts the credentials shown in `customization.js`.
-- [ ] Both profiles can be selected and the demo PIN works.
-- [ ] All three carousels move only when a user clicks an arrow or swipes.
-- [ ] Hover previews appear fully and do not resize the underlying thumbnails.
-- [ ] The hero video, Play modal, More Info modal, and close buttons work.
-- [ ] All 63 gallery files and the profile / cover assets load.
-- [ ] The layout works on desktop and mobile.
-- [ ] You removed any sample text, demo credentials, or assets you do not want to publish.
+Because this is a static website, you can open `loginPage.html` in a browser. For a more reliable test, serve the project directory with a local web server. If Python is installed:
 
-## 🌐 Publishing
+```bash
+python -m http.server 8000
+```
 
-You can host this static site on any suitable static web host. See [`docs/GITHUB_PUBLISHING.md`](docs/GITHUB_PUBLISHING.md) for GitHub Topics, the repository-template setting, a social preview, and a release checklist. The included `vercel.json` is optional and only provides a root redirect for Vercel deployments.
+Open `http://localhost:8000/loginPage.html` in your browser.
 
-## 🔎 Research and design references
+## Customize the Template
 
-This template was informed by common patterns in public Netflix-inspired UI and birthday-website projects. See [`docs/REFERENCE_REVIEW.md`](docs/REFERENCE_REVIEW.md) for a short comparison. The code in this repository was adapted for this template rather than copied wholesale from those projects.
+### 1. Replace the placeholders
 
-## ⚖️ License and third-party assets
+Search the HTML, JavaScript, and this README for these tokens and replace them with your own details:
 
-No license is included yet. A public GitHub repository is not automatically permission for others to reuse, modify, or redistribute the code; choose and add a license before describing the project as open source. The project also loads Bootstrap, Bootstrap Icons, a font stylesheet, and the favicon endpoint from external services. Review their terms and replace any brand-specific links or artwork before redistribution or commercial use.
+- `[RECIPIENT_NAME]` — the person receiving the birthday message
+- `[SENDER_NAME]` — the person sending the message
+- `[CREATOR_NAME]` — your credit in the footer
+- `[YEAR]` — the year to show in the footer
+- `[MESSAGE_TITLE]` — the title of your message
+- `[GALLERY_TITLE_1]` and `[GALLERY_TITLE_2]` — your gallery section titles
+- `[CUSTOM_TAGLINE]` — short metadata for hover preview cards
+- `[WRITE YOUR BIRTHDAY MESSAGE HERE. Add your wishes, a favorite memory, or a personal note.]` — your birthday letter
+- `[ADD YOUR CLOSING MESSAGE HERE]` — a short sign-off
 
-## 🤝 Contributing
+You can also edit the hero description, gallery metadata, and accessible image `alt` text directly in `index.html`.
 
-Ideas, bug reports, and improvements are welcome. Read [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening an issue or pull request.
+### 2. Add your images
 
----
+Add the following custom assets to `images/` (or change the source paths in `index.html` and `profiles.html`):
 
-<div align="center">
-Made for personal birthday surprises. Customize it, make it yours, and share it thoughtfully. ❤️
-</div>
+- `logo.png` — logo image used by the navbar and profile page
+- `recipient-profile.png` — profile avatar for the recipient
+- `sender-profile.png` — profile avatar for the sender
+- `hero-title.png` — optional artwork/title graphic for the hero
+- `featured-cover.jpg` — hero video poster and the More Info modal cover
+- `message-artwork.png` — optional artwork at the end of the birthday letter
+- `1.jpg`, `2.jpg`, and so on — gallery thumbnails referenced by `index.html`
+
+The gallery thumbnails use a portrait 3:4 display ratio and `object-fit: cover`. You do not need to crop or resize your original files to use this display style.
+
+### 3. Add your video
+
+Place your background and playback video at `video/video.mp4`, or update the video source paths in `index.html`. Use media that you own or have permission to share. Large videos may slow down loading; consider optimizing them before publishing.
+
+### 4. Configure demo sign-in
+
+The sign-in and PIN screens are a front-end demonstration, not secure authentication. In `script.js`, the sample demo credentials are:
+
+| Demo account | Email | Password |
+|---|---|---|
+| Recipient profile | `recipient@example.com` | `demo1234` |
+| Sender profile | `sender@example.com` | `demo5678` |
+
+Replace these sample values in the `USERS` array in `script.js` before sharing your customized version. In `pin.js`, change `DEMO_PIN` from `1234` to the PIN you want to use.
+
+**Security note:** values stored in JavaScript or `localStorage` can be inspected or changed by visitors. Do not use real passwords, secrets, or sensitive personal information. This demo flow is not appropriate for protecting confidential content.
+
+### 5. Customize the galleries
+
+In `index.html`, edit `[GALLERY_TITLE_1]` and `[GALLERY_TITLE_2]`, then replace the image paths and `alt` text in each gallery card. You may duplicate an existing carousel section to add another one; give each section and carousel a unique HTML `id`, keep the required CSS classes, and test its arrow controls and hover previews.
+
+### 6. Customize the design
+
+- `landing.css`: hero, gallery, carousel, hover preview, modal, and footer
+- `responsive.css`: layout on smaller screens
+- `style.css`: shared and sign-in styles
+- `profiles.css`: profile selection page
+- `pin.css`: PIN screen
+
+Make small, targeted changes and test the affected pages before publishing.
+
+## Credits and Usage
+
+This project recreates interaction and layout ideas for learning and personal customization. It does not include Netflix's proprietary service or catalog. Use your own images, videos, text, and other assets, and check the applicable rights before distributing or using the project commercially.
