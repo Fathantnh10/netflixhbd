@@ -1,5 +1,5 @@
 // === AUTH GUARD ===
-const DEMO_PIN = "1234"; // Change this demo PIN when customizing the template.
+const DEMO_PIN = window.BIRTHDAY_SITE_CONFIG?.demoPin || "1234"; // Demo only; never treat this as real security.
 
 const user = localStorage.getItem("netflixUser");
 const profile = localStorage.getItem("netflixProfile");
@@ -7,7 +7,7 @@ const profile = localStorage.getItem("netflixProfile");
 const pins = document.querySelectorAll(".pin");
 const errorText = document.getElementById("pinError");
 const loader = document.getElementById("loader");
-const tadum = document.getElementById("tadum");
+const chimeAudio = document.getElementById("successChime");
 
 let isChecking = false;
 
@@ -25,7 +25,7 @@ function initPin() {
   pins.forEach((pin, index) => {
     pin.addEventListener("input", () => {
       if (isChecking) {
-        // abaikan perubahan saat verifikasi berjalan
+        // Ignore changes while verification is in progress.
         return;
       }
 
@@ -68,7 +68,7 @@ function checkPin() {
     setTimeout(() => {
       if (pinCode === DEMO_PIN) {
         localStorage.setItem("pinVerified", "true");
-        tadum.play().catch(() => {});
+        if (chimeAudio) chimeAudio.play().catch(() => {});
         // beri waktu suara berbunyi sebelum pindah halaman
         setTimeout(() => {
           window.location.href = "index.html";

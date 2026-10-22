@@ -1,1017 +1,2464 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <script>
-    if (!localStorage.getItem("netflixUser")) location.replace("loginPage.html");
+ <head>
+  <script>
+   if (!localStorage.getItem("netflixUser")) location.replace("loginPage.html");
     else if (!localStorage.getItem("netflixProfile")) location.replace("profiles.html");
     else if (localStorage.getItem("pinVerified") !== "true") location.replace("pin.html");
-    </script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link href="https://fonts.cdnfonts.com/css/netflix-sans" rel="stylesheet">
-    <link rel="icon" href="https://favicon.im/domain/netflix.com">
-<!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="./landing.css">
-    <link rel="stylesheet" href="./responsive.css">
-    <link rel="stylesheet" href="./style.css">
-<title>Birthday Surprise for [RECIPIENT_NAME] | Customizable Template</title>
-  </head>
-  <body class="home-page">
-    
-    <div style="position: relative;">
-      <!-- header -->
-      <nav id="mainNavbar" class="navbar navbar-expand-lg netflix-navbar netflix-padding-left netflix-padding-right">
-        <div class="container-fluid">
-          <div class="netflix-row">
-            <div class="left d-flex align-items-center">
-              <a class="navbar-brand" href="#home" aria-label="Netflix Home">
-                <img src="./images/logo.png" alt="Logo">
-              </a>
-              <div class="netflix-nav" aria-label="Main navigation">
-                 <section>
-                    <button type="button" class="active" aria-current="page">Home</button>
-                    <button type="button">Shows</button>
-                    <button type="button">Movies</button>
-                    <button type="button">Games</button>
-                    <button type="button">New &amp; Popular</button>
-                    <button type="button">My Netflix</button>
-                    <button type="button">Browse by Languages</button>
-                 </section>
-              </div>
-              <div class="netflix-dropdown-box dropdown">
-                <button class="netflix-dropdown dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                  Browse
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                  <li><a class="dropdown-item" href="#">Home</a></li>
-                  <li><a class="dropdown-item" href="#">Shows</a></li>
-                  <li><a class="dropdown-item" href="#">Movies</a></li>
-                  <li><a class="dropdown-item" href="#">New &amp; Popular</a></li>
-                  <li><a class="dropdown-item" href="#">My Netflix</a></li>
-                  <li><a class="dropdown-item" href="#">Browse by Languages</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="right d-flex align-items-center">
-              <i class="bi bi-search"></i>
-              <i class="bi bi-bell-fill"></i>
-              <div class="profile-menu-wrap">
-                <button type="button" class="profile-menu-toggle" id="profileMenuToggle" aria-label="Open profile menu" aria-expanded="false" aria-controls="profileMenu">
-                  <span class="netflix-profile"><img id="activeProfileAvatar" src="./images/recipient-profile.png" alt="[RECIPIENT_NAME] profile avatar"></span>
-                  <i class="bi bi-caret-down-fill profile-caret" aria-hidden="true"></i>
-                </button>
-                <div class="profile-dropdown" id="profileMenu" hidden>
-                  <div class="profile-dropdown-profiles">
-                    <button type="button" class="profile-dropdown-item" data-switch-profile="recipient"><img src="./images/recipient-profile.png" alt=""><span>[RECIPIENT_NAME]</span></button>
-                    <button type="button" class="profile-dropdown-item" data-switch-profile="sender"><img src="./images/sender-profile.png" alt=""><span>[SENDER_NAME]</span></button>
-                  </div>
-                  <a href="profiles.html" class="profile-dropdown-item"><i class="bi bi-pencil-square" aria-hidden="true"></i><span>Manage Profiles</span></a>
-                  <button type="button" class="profile-dropdown-item" data-profile-action="transfer"><i class="bi bi-person-bounding-box" aria-hidden="true"></i><span>Transfer Profile</span></button>
-                  <button type="button" class="profile-dropdown-item" data-profile-action="account"><i class="bi bi-person" aria-hidden="true"></i><span>Account</span></button>
-                  <button type="button" class="profile-dropdown-item" data-profile-action="help"><i class="bi bi-question-circle" aria-hidden="true"></i><span>Help Center</span></button>
-                  <div class="profile-dropdown-divider"></div>
-                  <button type="button" class="profile-signout" data-profile-action="signout">Sign out of Netflix</button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </nav>
-      <!-- /header -->
-
-
-      <!-- Hero / video background -->
-      <section class="netflix-home-video" id="home" aria-label="Featured video">
-         <video id="backgroundVideo" src="./video/video.mp4" autoplay muted loop playsinline preload="metadata" poster="./images/featured-cover.jpg"></video>
-         <div class="hero-shade" aria-hidden="true"></div>
-         <div class="content">
-             <section class="left hero-copy">
-                 <img class="hero-logo" src="./images/hero-title.png" alt="Custom hero title artwork">
-                 <p class="hero-kicker">A Birthday Surprise for [RECIPIENT_NAME]</p>
-                 <p class="hero-meta">Personal Video <span>•</span> Birthday Message <span>•</span> [SENDER_NAME]</p>
-                 <p class="hero-description">A heartfelt birthday surprise for [RECIPIENT_NAME], created by [SENDER_NAME]. Replace this description with your own message.</p>
-                 <p class="hero-note">Open “More Info” to read the full message.</p>
-                 <div class="hero-actions">
-                   <button type="button" class="btn btn-light hero-play-button" data-bs-toggle="modal" data-bs-target="#videoModal">
-                     <i class="bi bi-play-fill" aria-hidden="true"></i> Play
-                   </button>
-                   <button type="button" class="btn btn-secondary hero-info-button" data-bs-toggle="modal" data-bs-target="#infoModal">
-                     <i class="bi bi-info-circle" aria-hidden="true"></i> More Info
-                   </button>
-                 </div>
-             </section>
-         </div>
-         <button type="button" id="heroMuteToggle" class="hero-mute-toggle" aria-label="Unmute video" aria-pressed="false">
-           <i class="bi bi-volume-mute-fill" aria-hidden="true"></i>
+  </script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet"/>
+  <link href="https://fonts.cdnfonts.com/css/netflix-sans" rel="stylesheet"/>
+  <link href="https://a.favicon.im/netflix.com" rel="icon"/>
+  <!-- Bootstrap CSS -->
+  <link crossorigin="anonymous" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" rel="stylesheet"/>
+  <link href="./landing.css" rel="stylesheet"/>
+  <link href="./responsive.css" rel="stylesheet"/>
+  <link href="./style.css" rel="stylesheet"/>
+  <title>
+   Birthday Surprise Template
+  </title>
+ </head>
+ <body class="home-page">
+  <div style="position: relative;">
+   <!-- header -->
+   <nav class="navbar navbar-expand-lg netflix-navbar netflix-padding-left netflix-padding-right" id="mainNavbar">
+    <div class="container-fluid">
+     <div class="netflix-row">
+      <div class="left d-flex align-items-center">
+       <a aria-label="Netflix Home" class="navbar-brand" href="#home">
+        <img alt="Logo" src="./images/logo.png"/>
+       </a>
+       <div aria-label="Main navigation" class="netflix-nav">
+        <section>
+         <button aria-current="page" class="active" type="button">
+          Home
          </button>
-      </section>
-      <!-- /Hero / video background -->
-
-      <!-- Video Modal -->
-      <div class="modal fade netflix-video-modal" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="videoModalLabel">Video Playback</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <video controls class="w-100">
-                <source src="./video/video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
+         <button type="button">
+          Shows
+         </button>
+         <button type="button">
+          Movies
+         </button>
+         <button type="button">
+          Games
+         </button>
+         <button type="button">
+          New &amp; Popular
+         </button>
+         <button type="button">
+          My Netflix
+         </button>
+         <button type="button">
+          Browse by Languages
+         </button>
+        </section>
+       </div>
+       <div class="netflix-dropdown-box dropdown">
+        <button aria-expanded="false" class="netflix-dropdown dropdown-toggle" data-bs-toggle="dropdown" id="dropdownMenuButton1" type="button">
+         Browse
+        </button>
+        <ul aria-labelledby="dropdownMenuButton1" class="dropdown-menu">
+         <li>
+          <a class="dropdown-item" href="#">
+           Home
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item" href="#">
+           Shows
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item" href="#">
+           Movies
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item" href="#">
+           New &amp; Popular
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item" href="#">
+           My Netflix
+          </a>
+         </li>
+         <li>
+          <a class="dropdown-item" href="#">
+           Browse by Languages
+          </a>
+         </li>
+        </ul>
+       </div>
       </div>
-
-      <!-- More Info modal: Netflix-inspired layout with personal content -->
-      <div class="modal fade netflix-info-modal" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
-          <div class="modal-content">
-            <div class="info-modal-hero">
-              <img class="info-modal-hero-image" src="./images/featured-cover.jpg" alt="Custom birthday message cover">
-              <div class="info-modal-hero-shade" aria-hidden="true"></div>
-              <button type="button" class="info-modal-close" data-bs-dismiss="modal" aria-label="Close information">
-                <i class="bi bi-x-lg" aria-hidden="true"></i>
-              </button>
-              <div class="info-modal-hero-copy">
-                <p class="info-eyebrow">PERSONAL MESSAGE · CUSTOMIZE THIS TEMPLATE</p>
-                <h2 id="infoModalLabel">[MESSAGE_TITLE]</h2>
-                <p>A special birthday message for [RECIPIENT_NAME]</p>
-              </div>
-            </div>
-            <div class="modal-body info-modal-body">
-              <div class="info-modal-meta">Personal Video <span>•</span> Birthday Message <span>•</span> [SENDER_NAME]</div>
-              <h3>A Message for You</h3>
-              <p class="info-letter">Happy Birthday, [RECIPIENT_NAME]! ❤️<br>
-                [WRITE YOUR BIRTHDAY MESSAGE HERE. Add your wishes, a favorite memory, or a personal note.]<br>
-                <strong>[ADD YOUR CLOSING MESSAGE HERE]</strong><br>
-                [SENDER_NAME]
-              </p>
-              <div class="info-signature-wrap">
-                <img src="./images/message-artwork.png" class="info-signature-image" alt="Custom message artwork">
-              </div>
-            </div>
-          </div>
+      <div class="right d-flex align-items-center">
+       <i class="bi bi-search">
+       </i>
+       <i class="bi bi-bell-fill">
+       </i>
+       <div class="profile-menu-wrap">
+        <button aria-controls="profileMenu" aria-expanded="false" aria-label="Open profile menu" class="profile-menu-toggle" id="profileMenuToggle" type="button">
+         <span class="netflix-profile">
+          <img alt="[RECIPIENT_NAME] profile avatar" id="activeProfileAvatar" src="./images/recipient-profile.png"/>
+         </span>
+         <i aria-hidden="true" class="bi bi-caret-down-fill profile-caret">
+         </i>
+        </button>
+        <div class="profile-dropdown" hidden="" id="profileMenu">
+         <div class="profile-dropdown-profiles">
+          <button class="profile-dropdown-item" data-switch-profile="recipient" type="button">
+           <img alt="" src="./images/recipient-profile.png"/>
+           <span>
+            [RECIPIENT_NAME]
+           </span>
+          </button>
+          <button class="profile-dropdown-item" data-switch-profile="sender" type="button">
+           <img alt="" src="./images/sender-profile.png"/>
+           <span>
+            [SENDER_NAME]
+           </span>
+          </button>
+         </div>
+         <a class="profile-dropdown-item" href="profiles.html">
+          <i aria-hidden="true" class="bi bi-pencil-square">
+          </i>
+          <span>
+           Manage Profiles
+          </span>
+         </a>
+         <button class="profile-dropdown-item" data-profile-action="transfer" type="button">
+          <i aria-hidden="true" class="bi bi-person-bounding-box">
+          </i>
+          <span>
+           Transfer Profile
+          </span>
+         </button>
+         <button class="profile-dropdown-item" data-profile-action="account" type="button">
+          <i aria-hidden="true" class="bi bi-person">
+          </i>
+          <span>
+           Account
+          </span>
+         </button>
+         <button class="profile-dropdown-item" data-profile-action="help" type="button">
+          <i aria-hidden="true" class="bi bi-question-circle">
+          </i>
+          <span>
+           Help Center
+          </span>
+         </button>
+         <div class="profile-dropdown-divider">
+         </div>
+         <button class="profile-signout" data-profile-action="signout" type="button">
+          Sign out of Netflix
+         </button>
         </div>
+       </div>
       </div>
-
-    <div style="position: relative;"></div>
-    <!-- sliders -->
-      <div class="slider-box">
-          </div>
-        <div id="galleryOne" class="container-fluid gallery-section slide2">
-          <section class="d-flex justify-content-between margin-right margin-title1">
-            <p class="text-white"> <b>[GALLERY_TITLE_1]</b> </p>
-            <div class="">
-              <button  type="button" class="active tab-change-btn" aria-label="Slide 1"></button>
-              <button class="tab-change-btn" type="button" aria-label="Slide 2"></button>
-              <button class="tab-change-btn" type="button" aria-label="Slide 3"></button>
-            </div>
+     </div>
+    </div>
+   </nav>
+   <!-- /header -->
+   <!-- Hero / video background -->
+   <section aria-label="Featured video" class="netflix-home-video" id="home">
+    <video autoplay="" id="backgroundVideo" loop="" muted="" playsinline="" poster="./images/featured-cover.jpg" preload="metadata" src="./video/video.mp4">
+    </video>
+    <div aria-hidden="true" class="hero-shade">
+    </div>
+    <div class="content">
+     <section class="left hero-copy">
+      <img alt="Custom hero title artwork" class="hero-logo" src="./images/hero-title.png"/>
+      <p class="hero-kicker">
+       A Birthday Surprise for [RECIPIENT_NAME]
+      </p>
+      <p class="hero-meta">
+       Personal Video
+       <span>
+        &bull;
+       </span>
+       Birthday Message
+       <span>
+        &bull;
+       </span>
+       [SENDER_NAME]
+      </p>
+      <p class="hero-description">
+       [HERO_DESCRIPTION]
+      </p>
+      <p class="hero-note">
+       Open &ldquo;More Info&rdquo; to read the full message.
+      </p>
+      <div class="hero-actions">
+       <button class="btn btn-light hero-play-button" data-bs-target="#videoModal" data-bs-toggle="modal" type="button">
+        <i aria-hidden="true" class="bi bi-play-fill">
+        </i>
+        Play
+       </button>
+       <button class="btn btn-secondary hero-info-button" data-bs-target="#infoModal" data-bs-toggle="modal" type="button">
+        <i aria-hidden="true" class="bi bi-info-circle">
+        </i>
+        More Info
+       </button>
+      </div>
+     </section>
+    </div>
+    <button aria-label="Unmute video" aria-pressed="false" class="hero-mute-toggle" id="heroMuteToggle" type="button">
+     <i aria-hidden="true" class="bi bi-volume-mute-fill">
+     </i>
+    </button>
+   </section>
+   <!-- /Hero / video background -->
+   <!-- Video Modal -->
+   <div aria-hidden="true" aria-labelledby="videoModalLabel" class="modal fade netflix-video-modal" id="videoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+     <div class="modal-content">
+      <div class="modal-header">
+       <h5 class="modal-title" id="videoModalLabel">
+        Video Playback
+       </h5>
+       <button aria-label="Close" class="btn-close" data-bs-dismiss="modal" type="button">
+       </button>
+      </div>
+      <div class="modal-body">
+       <video class="w-100" controls="">
+        <source src="./video/video.mp4" type="video/mp4"/>
+        Your browser does not support the video tag.
+       </video>
+      </div>
+     </div>
+    </div>
+   </div>
+   <!-- More Info modal: Netflix-inspired layout with personal content -->
+   <div aria-hidden="true" aria-labelledby="infoModalLabel" class="modal fade netflix-info-modal" id="infoModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+     <div class="modal-content">
+      <div class="info-modal-hero">
+       <img alt="Custom birthday message cover" class="info-modal-hero-image" src="./images/featured-cover.jpg"/>
+       <div aria-hidden="true" class="info-modal-hero-shade">
+       </div>
+       <button aria-label="Close information" class="info-modal-close" data-bs-dismiss="modal" type="button">
+        <i aria-hidden="true" class="bi bi-x-lg">
+        </i>
+       </button>
+       <div class="info-modal-hero-copy">
+        <p class="info-eyebrow">
+         PERSONAL MESSAGE &middot; CUSTOMIZE THIS TEMPLATE
+        </p>
+        <h2 id="infoModalLabel">
+         [MESSAGE_TITLE]
+        </h2>
+        <p>
+         A special birthday message for [RECIPIENT_NAME]
+        </p>
+       </div>
+      </div>
+      <div class="modal-body info-modal-body">
+       <div class="info-modal-meta">
+        Personal Video
+        <span>
+         &bull;
+        </span>
+        Birthday Message
+        <span>
+         &bull;
+        </span>
+        [SENDER_NAME]
+       </div>
+       <h3>
+        A Message for You
+       </h3>
+       <p class="info-letter">
+        Happy Birthday, [RECIPIENT_NAME]! ❤️
+        <br/>
+        [BIRTHDAY_MESSAGE]
+        <br/>
+        <strong>
+         [CLOSING_MESSAGE]
+        </strong>
+        <br/>
+        [SENDER_NAME]
+       </p>
+       <div class="info-signature-wrap">
+        <img alt="Custom message artwork" class="info-signature-image" src="./images/message-artwork.png"/>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+   <div style="position: relative;">
+   </div>
+   <!-- sliders -->
+   <div class="slider-box">
+   </div>
+   <div class="container-fluid gallery-section slide2" id="galleryOne">
+    <section class="d-flex justify-content-between margin-right margin-title1">
+     <p class="text-white">
+      <b>
+       [GALLERY_TITLE_1]
+      </b>
+     </p>
+    </section>
+    <div class="carousel slide netflix-carousel" id="carouselGalleryOne">
+     <div class="carousel-inner netflix-carousel-viewport">
+      <div class="carousel-item active">
+       <section class="d-flex">
+        <div class="card">
+         <img alt="Gallery photo 1" class="card-img-top" decoding="async" loading="lazy" src="./images/1.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
           </section>
-          <div id="carouselGalleryOne" class="carousel slide netflix-carousel">
-            
-            <div class="carousel-inner netflix-carousel-viewport">
-              <div class="carousel-item active">
-                <section class="d-flex" >
-                  <div class="card" >
-                    <img src="./images/19.jpg" class="card-img-top" alt="Gallery photo 19">
-                    <div class="card-body"> 
-                        <section class="d-flex justify-content-between">
-                          <div>
-                            <i class="bi bi-play-circle-fill card-icon"  ></i>
-                            <i  class="bi bi-plus-circle card-icon"></i>
-                          </div>
-                          <div>
-                            <i class="bi bi-arrow-down-circle card-icon"></i>
-                          </div>
-                        </section>
-                        <section class="d-flex align-items-center justify-content-between" >
-                           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                             <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                          
-                          </section>
-                          <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="./images/23.jpg" class="card-img-top" alt="Gallery photo 23">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card">
-                    <img src="./images/24.jpg" class="card-img-top" alt="Gallery photo 24">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/25.jpg" class="card-img-top" alt="Gallery photo 25">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/26.jpg" class="card-img-top" alt="Gallery photo 26">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/27.jpg" class="card-img-top" alt="Gallery photo 27">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                </section>
-              </div>
-              <div class="carousel-item">
-                <section class="d-flex ">
-                  <div class="card">
-                    <img src="./images/21.jpg" class="card-img-top" alt="Gallery photo 21" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/28.jpg" class="card-img-top" alt="Gallery photo 28" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card">
-                    <img src="./images/29.jpg" class="card-img-top" alt="Gallery photo 29" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/30.jpg" class="card-img-top" alt="Gallery photo 30" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/31.jpg" class="card-img-top" alt="Gallery photo 31" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/32.jpg" class="card-img-top" alt="Gallery photo 32" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                </section>
-              </div>
-              <div class="carousel-item">
-                <section class="d-flex ">
-                  <div class="card" >
-                    <img src="./images/33.jpg" class="card-img-top" alt="Gallery photo 33" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/34.jpg" class="card-img-top" alt="Gallery photo 34" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/35.jpg" class="card-img-top" alt="Gallery photo 35" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/37.jpg" class="card-img-top" alt="Gallery photo 37" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/36.jpg" class="card-img-top" alt="Gallery photo 36" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/20.jpg" class="card-img-top" alt="Gallery photo 20" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <button class="carousel-control-prev netflix-carousel-arrow netflix-carousel-prev" type="button" aria-label="Scroll left">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next netflix-carousel-arrow netflix-carousel-next" type="button" aria-label="Scroll right">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
-        </div>
-        <div id="galleryTwo" class="container-fluid gallery-section slide2">
-          <section class="d-flex justify-content-between margin-right margin-title2">
-            <p class="text-white"> <b>[GALLERY_TITLE_2]</b> </p>
-            <div class="">
-              <button  type="button" class="active tab-change-btn" aria-label="Slide 1"></button>
-              <button class="tab-change-btn" type="button" aria-label="Slide 2"></button>
-              <button class="tab-change-btn" type="button" aria-label="Slide 3"></button>
-            </div>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
           </section>
-          <div id="carouselGalleryTwo" class="carousel slide netflix-carousel">
-            
-            <div class="carousel-inner netflix-carousel-viewport">
-              <div class="carousel-item active">
-                <section class="d-flex " >
-                  <div class="card" >
-                    <img src="./images/10.jpg" class="card-img-top" alt="Gallery photo 10" loading="lazy">
-                    <div class="card-body"> 
-                        <section class="d-flex justify-content-between">
-                          <div>
-                            <i class="bi bi-play-circle-fill card-icon"  ></i>
-                            <i  class="bi bi-plus-circle card-icon"></i>
-                          </div>
-                          <div>
-                            <i class="bi bi-arrow-down-circle card-icon"></i>
-                          </div>
-                        </section>
-                        <section class="d-flex align-items-center justify-content-between" >
-                           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                             <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                          
-                          </section>
-                          <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img src="./images/11.jpg" class="card-img-top" alt="Gallery photo 11" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card">
-                    <img src="./images/12.jpg" class="card-img-top" alt="Gallery photo 12" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/13.jpg" class="card-img-top" alt="Gallery photo 13" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/14.jpg" class="card-img-top" alt="Gallery photo 14" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/15.jpg" class="card-img-top" alt="Gallery photo 15" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                </section>
-              </div>
-              <div class="carousel-item">
-                <section class="d-flex">
-                  <div class="card">
-                    <img src="./images/16.jpg" class="card-img-top" alt="Gallery photo 16" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/17.jpg" class="card-img-top" alt="Gallery photo 17" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card">
-                    <img src="./images/18.jpg" class="card-img-top" alt="Gallery photo 18" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/1.jpg" class="card-img-top" alt="Gallery photo 1" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/3.jpg" class="card-img-top" alt="Gallery photo 3" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/5.jpg" class="card-img-top" alt="Gallery photo 5" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                </section>
-              </div>
-              <div class="carousel-item">
-                <section class="d-flex ">
-                  <div class="card" >
-                    <img src="./images/7.jpg" class="card-img-top" alt="Gallery photo 7" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/9.jpg" class="card-img-top" alt="Gallery photo 9" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/2.jpg" class="card-img-top" alt="Gallery photo 2" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/4.jpg" class="card-img-top" alt="Gallery photo 4" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/6.jpg" class="card-img-top" alt="Gallery photo 6" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                  <div class="card" >
-                    <img src="./images/22.jpg" class="card-img-top" alt="Gallery photo 22" loading="lazy">
-                    <div class="card-body"> 
-                      <section class="d-flex justify-content-between">
-                        <div>
-                          <i class="bi bi-play-circle-fill card-icon"  ></i>
-                          <i  class="bi bi-plus-circle card-icon"></i>
-                        </div>
-                        <div>
-                          <i class="bi bi-arrow-down-circle card-icon"></i>
-                        </div>
-                      </section>
-                      <section class="d-flex align-items-center justify-content-between" >
-                         <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">97% match</p> 
-                           <span class="m-2 netflix-card-text text-white">Limited Series</span> <span class="border netflix-card-text p-1 text-white">HD</span>
-                        
-                        </section>
-                        <span class="netflix-card-text text-white">[RECIPIENT_NAME] • [SENDER_NAME] • [CUSTOM_TAGLINE]</span>
-                  </div>
-                  </div>
-                </section>
-              </div>
-            </div>
-            <button class="carousel-control-prev netflix-carousel-arrow netflix-carousel-prev" type="button" aria-label="Scroll left">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next netflix-carousel-arrow netflix-carousel-next" type="button" aria-label="Scroll right">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="visually-hidden">Next</span>
-            </button>
-          </div>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
         </div>
+        <div class="card">
+         <img alt="Gallery photo 2" class="card-img-top" decoding="async" loading="lazy" src="./images/2.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 3" class="card-img-top" decoding="async" loading="lazy" src="./images/3.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 4" class="card-img-top" decoding="async" loading="lazy" src="./images/4.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 5" class="card-img-top" decoding="async" loading="lazy" src="./images/5.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 6" class="card-img-top" decoding="async" loading="lazy" src="./images/6.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 7" class="card-img-top" decoding="async" loading="lazy" src="./images/7.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 8" class="card-img-top" decoding="async" loading="lazy" src="./images/8.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 9" class="card-img-top" decoding="async" loading="lazy" src="./images/9.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 10" class="card-img-top" decoding="async" loading="lazy" src="./images/10.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 11" class="card-img-top" decoding="async" loading="lazy" src="./images/11.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 12" class="card-img-top" decoding="async" loading="lazy" src="./images/12.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 13" class="card-img-top" decoding="async" loading="lazy" src="./images/13.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 14" class="card-img-top" decoding="async" loading="lazy" src="./images/14.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 15" class="card-img-top" decoding="async" loading="lazy" src="./images/15.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 16" class="card-img-top" decoding="async" loading="lazy" src="./images/16.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 17" class="card-img-top" decoding="async" loading="lazy" src="./images/17.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 18" class="card-img-top" decoding="async" loading="lazy" src="./images/18.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 19" class="card-img-top" decoding="async" loading="lazy" src="./images/19.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 20" class="card-img-top" decoding="async" loading="lazy" src="./images/20.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 21" class="card-img-top" decoding="async" loading="lazy" src="./images/21.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+       </section>
       </div>
-      <!-- sliders-end -->
-
-
-      <!-- Footer -->
-      <footer class="netflix-footer" id="siteFooter">
-        <div class="footer-inner">
-          <nav class="footer-socials" aria-label="Social media">
-            <a href="https://www.facebook.com/netflix" target="_blank" rel="noopener noreferrer" aria-label="Facebook Netflix"><i class="bi bi-facebook" aria-hidden="true"></i></a>
-            <a href="https://www.instagram.com/netflix/" target="_blank" rel="noopener noreferrer" aria-label="Instagram Netflix"><i class="bi bi-instagram" aria-hidden="true"></i></a>
-            <a href="https://x.com/netflix" target="_blank" rel="noopener noreferrer" aria-label="X Netflix"><span class="footer-x" aria-hidden="true">𝕏</span></a>
-            <a href="https://www.youtube.com/@Netflix" target="_blank" rel="noopener noreferrer" aria-label="YouTube Netflix"><i class="bi bi-youtube" aria-hidden="true"></i></a>
-          </nav>
-          <div class="footer-link-grid">
-            <ul>
-              <li><a href="https://help.netflix.com/" target="_blank" rel="noopener noreferrer">Audio Description</a></li>
-              <li><a href="https://ir.netflix.net/" target="_blank" rel="noopener noreferrer">Investor Relations</a></li>
-              <li><a href="https://help.netflix.com/legal/notices" target="_blank" rel="noopener noreferrer">Legal Notices</a></li>
-            </ul>
-            <ul>
-              <li><a href="https://help.netflix.com/" target="_blank" rel="noopener noreferrer">Help Center</a></li>
-              <li><a href="https://jobs.netflix.com/" target="_blank" rel="noopener noreferrer">Jobs</a></li>
-              <li><a href="https://www.netflix.com/YourAccount" target="_blank" rel="noopener noreferrer">Cookie Preferences</a></li>
-            </ul>
-            <ul>
-              <li><a href="https://www.netflix.com/gift-cards" target="_blank" rel="noopener noreferrer">Gift Cards</a></li>
-              <li><a href="https://help.netflix.com/legal/termsofuse" target="_blank" rel="noopener noreferrer">Terms of Use</a></li>
-              <li><a href="https://about.netflix.com/" target="_blank" rel="noopener noreferrer">Corporate Information</a></li>
-            </ul>
-            <ul>
-              <li><a href="https://media.netflix.com/" target="_blank" rel="noopener noreferrer">Media Center</a></li>
-              <li><a href="https://help.netflix.com/legal/privacy" target="_blank" rel="noopener noreferrer">Privacy</a></li>
-              <li><a href="https://example.com/contact" target="_blank" rel="noopener noreferrer">Contact Us</a></li>
-            </ul>
-          </div>
-          <div class="footer-personal-credit">Created by [CREATOR_NAME]</div>
-          <div class="footer-copyright">© [YEAR] [CREATOR_NAME] · Netflix-inspired birthday website template</div>
+     </div>
+     <button aria-label="Previous photos in gallery 1" class="carousel-control-prev netflix-carousel-arrow netflix-carousel-prev" type="button">
+      <span aria-hidden="true" class="carousel-control-prev-icon">
+      </span>
+      <span class="visually-hidden">
+       Previous
+      </span>
+     </button>
+     <button aria-label="Next photos in gallery 1" class="carousel-control-next netflix-carousel-arrow netflix-carousel-next" type="button">
+      <span aria-hidden="true" class="carousel-control-next-icon">
+      </span>
+      <span class="visually-hidden">
+       Next
+      </span>
+     </button>
+    </div>
+   </div>
+   <div class="container-fluid gallery-section slide2" id="galleryTwo">
+    <section class="d-flex justify-content-between margin-right margin-title2">
+     <p class="text-white">
+      <b>
+       [GALLERY_TITLE_2]
+      </b>
+     </p>
+    </section>
+    <div class="carousel slide netflix-carousel" id="carouselGalleryTwo">
+     <div class="carousel-inner netflix-carousel-viewport">
+      <div class="carousel-item active">
+       <section class="d-flex">
+        <div class="card">
+         <img alt="Gallery photo 22" class="card-img-top" decoding="async" loading="lazy" src="./images/22.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
         </div>
-      </footer>
-
-    <!-- Optional Java; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
+        <div class="card">
+         <img alt="Gallery photo 23" class="card-img-top" decoding="async" loading="lazy" src="./images/23.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 24" class="card-img-top" decoding="async" loading="lazy" src="./images/24.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 25" class="card-img-top" decoding="async" loading="lazy" src="./images/25.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 26" class="card-img-top" decoding="async" loading="lazy" src="./images/26.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 27" class="card-img-top" decoding="async" loading="lazy" src="./images/27.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 28" class="card-img-top" decoding="async" loading="lazy" src="./images/28.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 29" class="card-img-top" decoding="async" loading="lazy" src="./images/29.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 30" class="card-img-top" decoding="async" loading="lazy" src="./images/30.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 31" class="card-img-top" decoding="async" loading="lazy" src="./images/31.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 32" class="card-img-top" decoding="async" loading="lazy" src="./images/32.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 33" class="card-img-top" decoding="async" loading="lazy" src="./images/33.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 34" class="card-img-top" decoding="async" loading="lazy" src="./images/34.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 35" class="card-img-top" decoding="async" loading="lazy" src="./images/35.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 36" class="card-img-top" decoding="async" loading="lazy" src="./images/36.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 37" class="card-img-top" decoding="async" loading="lazy" src="./images/37.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 38" class="card-img-top" decoding="async" loading="lazy" src="./images/38.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 39" class="card-img-top" decoding="async" loading="lazy" src="./images/39.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 40" class="card-img-top" decoding="async" loading="lazy" src="./images/40.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 41" class="card-img-top" decoding="async" loading="lazy" src="./images/41.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 42" class="card-img-top" decoding="async" loading="lazy" src="./images/42.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+       </section>
+      </div>
+     </div>
+     <button aria-label="Previous photos in gallery 2" class="carousel-control-prev netflix-carousel-arrow netflix-carousel-prev" type="button">
+      <span aria-hidden="true" class="carousel-control-prev-icon">
+      </span>
+      <span class="visually-hidden">
+       Previous
+      </span>
+     </button>
+     <button aria-label="Next photos in gallery 2" class="carousel-control-next netflix-carousel-arrow netflix-carousel-next" type="button">
+      <span aria-hidden="true" class="carousel-control-next-icon">
+      </span>
+      <span class="visually-hidden">
+       Next
+      </span>
+     </button>
+    </div>
+   </div>
+   <div class="container-fluid gallery-section slide2" id="galleryThree">
+    <section class="d-flex justify-content-between margin-right margin-title2">
+     <p class="text-white">
+      <b>
+       [GALLERY_TITLE_3]
+      </b>
+     </p>
+    </section>
+    <div class="carousel slide netflix-carousel" id="carouselGalleryThree">
+     <div class="carousel-inner netflix-carousel-viewport">
+      <div class="carousel-item active">
+       <section class="d-flex">
+        <div class="card">
+         <img alt="Gallery photo 43" class="card-img-top" decoding="async" loading="lazy" src="./images/43.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 44" class="card-img-top" decoding="async" loading="lazy" src="./images/44.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 45" class="card-img-top" decoding="async" loading="lazy" src="./images/45.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 46" class="card-img-top" decoding="async" loading="lazy" src="./images/46.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 47" class="card-img-top" decoding="async" loading="lazy" src="./images/47.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 48" class="card-img-top" decoding="async" loading="lazy" src="./images/48.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 49" class="card-img-top" decoding="async" loading="lazy" src="./images/49.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 50" class="card-img-top" decoding="async" loading="lazy" src="./images/50.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 51" class="card-img-top" decoding="async" loading="lazy" src="./images/51.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 52" class="card-img-top" decoding="async" loading="lazy" src="./images/52.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 53" class="card-img-top" decoding="async" loading="lazy" src="./images/53.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 54" class="card-img-top" decoding="async" loading="lazy" src="./images/54.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 55" class="card-img-top" decoding="async" loading="lazy" src="./images/55.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 56" class="card-img-top" decoding="async" loading="lazy" src="./images/56.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 57" class="card-img-top" decoding="async" loading="lazy" src="./images/57.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 58" class="card-img-top" decoding="async" loading="lazy" src="./images/58.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 59" class="card-img-top" decoding="async" loading="lazy" src="./images/59.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 60" class="card-img-top" decoding="async" loading="lazy" src="./images/60.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 61" class="card-img-top" decoding="async" loading="lazy" src="./images/61.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 62" class="card-img-top" decoding="async" loading="lazy" src="./images/62.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+        <div class="card">
+         <img alt="Gallery photo 63" class="card-img-top" decoding="async" loading="lazy" src="./images/63.jpg"/>
+         <div class="card-body">
+          <section class="d-flex justify-content-between">
+           <div>
+            <i aria-hidden="true" class="bi bi-play-circle-fill card-icon">
+            </i>
+            <i aria-hidden="true" class="bi bi-plus-circle card-icon">
+            </i>
+           </div>
+           <div>
+            <i aria-hidden="true" class="bi bi-arrow-down-circle card-icon">
+            </i>
+           </div>
+          </section>
+          <section class="d-flex align-items-center justify-content-between">
+           <p class="netflix-card-text m-0" style="color: rgb(0, 186, 0);">
+            97% match
+           </p>
+           <span class="m-2 netflix-card-text text-white">
+            Personal Collection
+           </span>
+           <span class="border netflix-card-text p-1 text-white">
+            HD
+           </span>
+          </section>
+          <span class="netflix-card-text text-white">
+           [RECIPIENT_NAME] &bull; [SENDER_NAME] &bull; [CUSTOM_TAGLINE]
+          </span>
+         </div>
+        </div>
+       </section>
+      </div>
+     </div>
+     <button aria-label="Previous photos in gallery 3" class="carousel-control-prev netflix-carousel-arrow netflix-carousel-prev" type="button">
+      <span aria-hidden="true" class="carousel-control-prev-icon">
+      </span>
+      <span class="visually-hidden">
+       Previous
+      </span>
+     </button>
+     <button aria-label="Next photos in gallery 3" class="carousel-control-next netflix-carousel-arrow netflix-carousel-next" type="button">
+      <span aria-hidden="true" class="carousel-control-next-icon">
+      </span>
+      <span class="visually-hidden">
+       Next
+      </span>
+     </button>
+    </div>
+   </div>
+  </div>
+  <!-- sliders-end -->
+  <!-- Footer -->
+  <footer class="netflix-footer" id="siteFooter">
+   <div class="footer-inner">
+    <nav aria-label="Social media" class="footer-socials">
+     <a aria-label="Facebook" href="https://www.facebook.com/netflix" rel="noopener noreferrer" target="_blank">
+      <i aria-hidden="true" class="bi bi-facebook">
+      </i>
+     </a>
+     <a aria-label="Instagram" href="https://www.instagram.com/netflix/" rel="noopener noreferrer" target="_blank">
+      <i aria-hidden="true" class="bi bi-instagram">
+      </i>
+     </a>
+     <a aria-label="X" href="https://x.com/netflix" rel="noopener noreferrer" target="_blank">
+      <span aria-hidden="true" class="footer-x">
+       &Xopf;
+      </span>
+     </a>
+     <a aria-label="YouTube" href="https://www.youtube.com/@Netflix" rel="noopener noreferrer" target="_blank">
+      <i aria-hidden="true" class="bi bi-youtube">
+      </i>
+     </a>
+    </nav>
+    <div class="footer-link-grid">
+     <ul>
+      <li>
+       <a href="https://help.netflix.com/" rel="noopener noreferrer" target="_blank">
+        Audio Description
+       </a>
+      </li>
+      <li>
+       <a href="https://ir.netflix.net/" rel="noopener noreferrer" target="_blank">
+        Investor Relations
+       </a>
+      </li>
+      <li>
+       <a href="https://help.netflix.com/legal/notices" rel="noopener noreferrer" target="_blank">
+        Legal Notices
+       </a>
+      </li>
+     </ul>
+     <ul>
+      <li>
+       <a href="https://help.netflix.com/" rel="noopener noreferrer" target="_blank">
+        Help Center
+       </a>
+      </li>
+      <li>
+       <a href="https://jobs.netflix.com/" rel="noopener noreferrer" target="_blank">
+        Jobs
+       </a>
+      </li>
+      <li>
+       <a href="https://www.netflix.com/YourAccount" rel="noopener noreferrer" target="_blank">
+        Cookie Preferences
+       </a>
+      </li>
+     </ul>
+     <ul>
+      <li>
+       <a href="https://www.netflix.com/gift-cards" rel="noopener noreferrer" target="_blank">
+        Gift Cards
+       </a>
+      </li>
+      <li>
+       <a href="https://help.netflix.com/legal/termsofuse" rel="noopener noreferrer" target="_blank">
+        Terms of Use
+       </a>
+      </li>
+      <li>
+       <a href="https://about.netflix.com/" rel="noopener noreferrer" target="_blank">
+        Corporate Information
+       </a>
+      </li>
+     </ul>
+     <ul>
+      <li>
+       <a href="https://media.netflix.com/" rel="noopener noreferrer" target="_blank">
+        Media Center
+       </a>
+      </li>
+      <li>
+       <a href="https://help.netflix.com/legal/privacy" rel="noopener noreferrer" target="_blank">
+        Privacy
+       </a>
+      </li>
+      <li>
+       <a href="https://example.com/contact" rel="noopener noreferrer" target="_blank">
+        Contact Us
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="footer-personal-credit">
+     Created by [CREATOR_NAME]
+    </div>
+    <div class="footer-copyright">
+     &copy; [YEAR] [CREATOR_NAME] &middot; Netflix-inspired birthday website template
+    </div>
+   </div>
+  </footer>
+  <!-- Optional Java; choose one of the two! -->
+  <!-- Apply generic text settings before initializing page interactions. -->
+  <script src="./customization.js">
+  </script>
+  <!-- Bootstrap Bundle with Popper -->
+  <script crossorigin="anonymous" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- Option 2: Separate Popper and Bootstrap JS -->
+  <!--
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     -->
-
-
-    <script src="./script.js"></script>
-    <script>
-      document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
+  <script src="./script.js">
+  </script>
+  <script>
+   document.getElementById('videoModal').addEventListener('hidden.bs.modal', function () {
         document.querySelector('#videoModal video').pause();
       });
-    </script>
-  </body>
+  </script>
+ </body>
 </html>

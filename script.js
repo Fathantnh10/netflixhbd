@@ -11,11 +11,11 @@
   menu.addEventListener("click",e=>{const link=e.target.closest("a[data-help-action]");if(!link)return;e.preventDefault();const action=link.dataset.helpAction;const error=document.getElementById("loginError");if(action==="forgot"){const email=document.getElementById("email");if(email){email.focus();email.setCustomValidity("Enter the email address or mobile number used to sign in.");email.addEventListener("input",()=>email.setCustomValidity(""),{once:true});}}else if(action==="learn"){if(error){error.textContent="Enter your email address or mobile number, then select Continue to proceed.";error.style.color="#b3b3b3";error.style.display="block";}}close();});
 })();
 
-// Demo-only accounts. Replace these values before sharing your customized template.
-const USERS = [
-  { email: "recipient@example.com", password: "demo1234", name: "[RECIPIENT_NAME]" },
-  { email: "sender@example.com", password: "demo5678", name: "[SENDER_NAME]" }
-];
+// Demo-only accounts are read from customization.js. Never use real passwords here.
+const USERS = (window.BIRTHDAY_SITE_CONFIG?.demoAccounts || [
+  { email: "recipient@example.com", password: "demo1234", name: "Recipient Name" },
+  { email: "sender@example.com", password: "demo5678", name: "Your Name" }
+]).map(({ email, password, name }) => ({ email, password, name }));
 
 const loginForm = document.getElementById("loginForm");
 const loginError = document.getElementById("loginError");
@@ -24,7 +24,7 @@ if (loginForm) {
   loginForm.addEventListener("submit", function (e) {
     e.preventDefault();
 
-    // langkah 1: Continue -> tampilkan kolom password
+    // Step 1: Continue reveals the password field.
     const pwWrap = document.getElementById("passwordWrap");
     if (pwWrap && pwWrap.hidden) {
       const em = document.getElementById("email");
@@ -46,12 +46,20 @@ if (loginForm) {
         loginError.style.display = "none";
       }
 
-      // simpan nama saja, tanpa email/password
+      // Store the display name only; never persist the demo password.
       localStorage.setItem("netflixUser", JSON.stringify({ name: user.name }));
 
+      const loginChime = document.getElementById("netflixSound");
+      let redirectDelay = 300;
+      if (loginChime) {
+        loginChime.currentTime = 0;
+        const playPromise = loginChime.play();
+        if (playPromise && typeof playPromise.catch === "function") playPromise.catch(() => {});
+        redirectDelay = 850;
+      }
       setTimeout(() => {
         window.location.href = "./profiles.html";
-      }, 300);
+      }, redirectDelay);
     }
     else {
       if (loginError) {
@@ -99,8 +107,8 @@ window.addEventListener("scroll", () => {
     const profileMenu = document.getElementById("profileMenu");
     if (profileToggle && profileMenu) {
       const profileConfig = {
-        recipient: { avatar: "./images/recipient-profile.png", label: "[RECIPIENT_NAME]" },
-        sender: { avatar: "./images/sender-profile.png", label: "[SENDER_NAME]" }
+        recipient: { avatar: "./images/recipient-profile.png", label: window.BIRTHDAY_SITE_CONFIG?.recipientName || "Recipient Name" },
+        sender: { avatar: "./images/sender-profile.png", label: window.BIRTHDAY_SITE_CONFIG?.senderName || "Your Name" }
       };
       const storedProfile = localStorage.getItem("netflixProfile");
       const currentProfile = profileConfig[storedProfile] ? storedProfile : "recipient";

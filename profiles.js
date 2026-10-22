@@ -24,11 +24,12 @@ function selectProfile(name) {
   profiles.forEach((profile) => {
     profile.tabIndex = 0;
     profile.setAttribute("role", "button");
-    const name = profile.dataset.profile || profile.querySelector("p")?.textContent?.trim();
-    profile.setAttribute("aria-label", name ? `Select ${name} profile` : "Select profile");
+    const profileKey = profile.dataset.profile;
+    const visibleName = profile.querySelector("p")?.textContent?.trim() || profileKey;
+    profile.setAttribute("aria-label", visibleName ? `Select ${visibleName} profile` : "Select profile");
     const choose = () => {
-      if (document.body.classList.contains("profiles-editing") || !name) return;
-      selectProfile(name);
+      if (document.body.classList.contains("profiles-editing") || !profileKey) return;
+      selectProfile(profileKey);
     };
     profile.addEventListener("click", choose);
     profile.addEventListener("keydown", (event) => {

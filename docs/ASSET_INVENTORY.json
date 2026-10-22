@@ -1,0 +1,30 @@
+{
+  "gallery_slots": 63,
+  "galleries": [
+    {
+      "name_token": "[GALLERY_TITLE_1]",
+      "files": "images/1.jpg to images/21.jpg",
+      "count": 21
+    },
+    {
+      "name_token": "[GALLERY_TITLE_2]",
+      "files": "images/22.jpg to images/42.jpg",
+      "count": 21
+    },
+    {
+      "name_token": "[GALLERY_TITLE_3]",
+      "files": "images/43.jpg to images/63.jpg",
+      "count": 21
+    }
+  ],
+  "replaceable_assets": [
+    "images/logo.png",
+    "images/recipient-profile.png",
+    "images/sender-profile.png",
+    "images/hero-title.png",
+    "images/featured-cover.jpg",
+    "images/message-artwork.png",
+    "video/video.mp4",
+    "audio/celebration-chime.mp3"
+  ]
+}
